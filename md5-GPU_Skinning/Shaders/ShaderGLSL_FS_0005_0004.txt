@@ -1,0 +1,12 @@
+
+//== SHADER COMPILE STATUS = TRUE
+/*== INFO LOG ==
+Fragment shader was successfully compiled to run on hardware.
+  == INFO LOG END ==*/
+varying vec2 texCoords;
+uniform sampler2D baseTexture;
+
+void main()
+{
+    gl_FragColor = texture2D(baseTexture, texCoords);
+}

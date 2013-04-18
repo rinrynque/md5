@@ -1,0 +1,59 @@
+
+//== PROGRAM LINK STATUS = TRUE
+//== PROGRAM VALIDATE STATUS = TRUE
+/*== INFO LOG ==
+Vertex shader(s) linked, fragment shader(s) linked.
+  == INFO LOG END ==*/
+
+//======================================================
+//   Vertex Shader 4 
+//======================================================
+
+//== SHADER COMPILE STATUS = TRUE
+/*== INFO LOG ==
+Vertex shader was successfully compiled to run on hardware.
+ WARNING: 0:24: warning(#402) Implicit truncation of vector from size 4 to size 2.   == INFO LOG END ==*/
+#ifndef MAX_BONES
+#define MAX_BONES 58
+#endif 
+attribute vec4 weight;
+
+uniform sampler2D baseTexture;
+uniform mat4 gBoneMatrix[MAX_BONES];
+varying vec2 texCoords;
+
+void main()
+{
+	vec4 matrixIndex = gl_MultiTexCoord2;
+	mat4 matTransform = gBoneMatrix[int(matrixIndex.x)] * weight.x;
+    matTransform += gBoneMatrix[int(matrixIndex.y)] * weight.y;
+    matTransform += gBoneMatrix[int(matrixIndex.z)] * weight.z;
+    float finalWeight = 1.0f - ( weight.x + weight.y + weight.z );
+    matTransform += gBoneMatrix[int(matrixIndex.w)] * finalWeight;
+ 
+    vec4 objPos =  matTransform *  gl_Vertex;
+    //objNormal = matTransform * vec4( normal, 0.0 ) );
+ 
+    gl_Position = gl_ModelViewProjectionMatrix * objPos ;
+	
+	texCoords = gl_MultiTexCoord0;
+
+	
+	gl_ClipVertex = gl_ModelViewMatrix * gl_Position;
+	
+}
+//======================================================
+//   Fragment Shader 5
+//======================================================
+
+//== SHADER COMPILE STATUS = TRUE
+/*== INFO LOG ==
+Fragment shader was successfully compiled to run on hardware.
+  == INFO LOG END ==*/
+varying vec2 texCoords;
+uniform sampler2D baseTexture;
+
+void main()
+{
+    gl_FragColor = texture2D(baseTexture, texCoords);
+}
