@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MD5_3d" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option extended_obj_names="1" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/MD5_3d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/MD5_3d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-g" />
+			<Add option="-fexceptions" />
+			<Add option="-I D:\boost" />
+			<Add option="-lboost" />
+			<Add option="-DGLEW_STATIC" />
+			<Add option="-DBOOST_STATIC" />
+			<Add directory="I:/Programmes/CodeBlocks/MinGW/include" />
+			<Add directory="D:/Boost/boost" />
+			<Add directory="./inc" />
+			<Add directory="./src" />
+		</Compiler>
+		<Linker>
+			<Add option="-lglew32s" />
+			<Add option="-L D:\boost\lib" />
+			<Add option="-lboost_filesystem-mgw46-mt-1_53" />
+			<Add option="-lboost_system-mgw46-mt-1_53" />
+			<Add option="-lSOIL" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\librudeconfig.a" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\libglfw.a" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\libglfwdll.a" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\libglu32.a" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\libopengl32.a" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\AntTweakBar.lib" />
+			<Add library="I:\Programmes\CodeBlocks\MinGW\lib\libglew32s.a" />
+			<Add directory="C:/Users/Public/Documents/MD5ModelLoader/externals/boost_1_46_0/lib" />
+		</Linker>
+		<Unit filename="Ressources/shaders/simple.fs" />
+		<Unit filename="Ressources/shaders/simple.vs" />
+		<Unit filename="config.ini" />
+		<Unit filename="inc/Helpers.h" />
+		<Unit filename="inc/MD5Animation.h" />
+		<Unit filename="inc/MD5Model.h" />
+		<Unit filename="inc/MD5ModelLoaderPCH.h" />
+		<Unit filename="inc/Material.h" />
+		<Unit filename="inc/config.h" />
+		<Unit filename="inc/coords.h" />
+		<Unit filename="inc/coords3d.h" />
+		<Unit filename="inc/main.h" />
+		<Unit filename="inc/programCommunication.h" />
+		<Unit filename="inc/shaders.h" />
+		<Unit filename="inc/verticesArrays.h" />
+		<Unit filename="src/Helpers.cpp" />
+		<Unit filename="src/MD5Animation.cpp" />
+		<Unit filename="src/MD5Model.cpp" />
+		<Unit filename="src/MD5ModelLoaderPCH.cpp" />
+		<Unit filename="src/coords.tpp" />
+		<Unit filename="src/coords3d.tpp" />
+		<Unit filename="src/lightShader.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/shaders.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
